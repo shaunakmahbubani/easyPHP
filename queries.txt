@@ -1,0 +1,8 @@
+
+select * from images join follow on images.fk_userid=follow.fk_followid where follow.fk_userid=1 ;
+
+
+
+select * from images join follow on images.fk_userid=follow.fk_followid where follow.fk_userid=1 and orientation=1 order by datetime desc limit 10;
+
+Select * from inspirations as insp join images on insp.fk_imageid=images.imageid where insp.fk_userid=1 and col=1 order by insp.datetime desc limit 5;

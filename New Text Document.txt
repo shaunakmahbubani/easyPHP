@@ -1,0 +1,13 @@
+onClick='location.href="like.php?view=$row[0]"'
+
+
+$(".leftpost .like").click(function(){  
+      $("#quote p").load("script.php");  
+    }); 
+
+
+
+$(document).ready(function(){ 
+
+});
+

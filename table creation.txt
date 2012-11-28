@@ -1,0 +1,74 @@
+"\Program Files\EasyPHP-5.3.9\mysql\bin\mysql" -u root -p
+
+create table users (
+userid INT UNSIGNED AUTO_INCREMENT NOT NULL KEY,
+username varchar(100),
+handle varchar(20),
+email varchar(50),
+bio varchar(200),
+password varchar(100),
+inspcol INT UNSIGNED) ENGINE MyISAM;
+
+insert into users(username, handle, email, bio, inspcol) 
+values('Shaunak Mahbubani','shaunak','shaunak304@gmail.com','Amateur visual artist. Computer Science Major. Veteran Dreamer. Breathe in. Breathe out. Float. Explore.',0);
+
+
+insert into users(username, handle, email, bio) 
+values('User2','user2','user2@gmail.com','BIO bio BIO bio');
+
+create table images (
+imageid INT UNSIGNED AUTO_INCREMENT NOT NULL KEY,
+fk_userid INT UNSIGNED,
+title varchar (50),
+description varchar(200),
+category varchar(20),
+orientation int unsigned,
+datetime timestamp DEFAULT CURRENT_TIMESTAMP,
+filepath varchar(100),
+portfolio INT UNSIGNED,
+likes INT UNSIGNED,
+feedback INT UNSIGNED,
+inspirations INT UNSIGNED,
+FOREIGN KEY (fk_userid) REFERENCES users(userid)) ENGINE MyISAM;
+
+
+insert into images(fk_userid, title, category, description, orientation, filepath)
+ values(1,'Adidas','Graphic Design',' ',1,'images/1/1.jpg');
+
+create table follow (
+fk_userid INT UNSIGNED,
+fk_followid INT UNSIGNED,
+PRIMARY KEY(fk_userid,fk_followid),
+FOREIGN KEY (fk_userid) REFERENCES users(userid),
+FOREIGN KEY (fk_followid) REFERENCES users(userid)) ENGINE MyISAM;
+
+create table inspirations(
+inspid INT UNSIGNED AUTO_INCREMENT NOT NULL KEY,
+fk_imageid INT UNSIGNED,
+fk_userid INT UNSIGNED,
+authorid INT UNSIGNED,
+inspuserid INT UNSIGNED,
+datetime timestamp DEFAULT CURRENT_TIMESTAMP,
+col INT UNSIGNED,
+FOREIGN KEY (fk_imageid) REFERENCES images(imageid),
+FOREIGN KEY (fk_userid) REFERENCES users(userid)) ENGINE MyISAM;
+
+create table likes(
+fk_imageid INT UNSIGNED,
+fk_userid INT UNSIGNED,
+datetime timestamp DEFAULT CURRENT_TIMESTAMP,
+PRIMARY KEY(fk_imageid,fk_userid)) ENGINE MyISAM;
+
+create table feedback(
+feedbackid INT UNSIGNED AUTO_INCREMENT NOT NULL KEY,
+fk_imageid INT UNSIGNED,
+fk_userid INT UNSIGNED,
+feedback varchar(200),
+datetime timestamp DEFAULT CURRENT_TIMESTAMP,
+FOREIGN KEY (fk_imageid) REFERENCES images(imageid),
+FOREIGN KEY (fk_userid) REFERENCES users(userid)) ENGINE MyISAM;
+
+create table communities(
+userid INT UNSIGNED,
+com varchar(20),
+PRIMARY KEY(userid,com)) ENGINE MyISAM;

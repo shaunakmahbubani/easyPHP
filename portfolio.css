@@ -1,0 +1,259 @@
+
+/*global reset*/
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    font-size: 100%;
+    vertical-align: baseline;
+    text-decoration: none;
+}
+
+/*----------------------*/
+
+body{
+    font-family: "lucida grande",tahoma,verdana,arial,sans-serif;
+    font-size: 14px;
+    background: #ededed;
+}
+
+#navbar {
+    height: 30px;
+    width: 100%;
+    background-color: #d34937;
+    position: fixed;
+    box-shadow: 0px 0px 5px gray;
+    padding-top:5px;    
+}
+
+.navicon{
+	height:80%;
+	margin-right:5px;
+}
+
+.navicon:hover {
+    background: none repeat scroll 0 0 #D85C4C;
+}
+.container{
+    width: 840px;
+    height: 100%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/*----------------------*/
+
+.menutop {
+    float: right;
+    list-style: none outside none;
+    width: 100px;
+}
+
+.menutop li {
+    height: 30px;
+}
+
+/*
+.menutop:hover > .menusub {
+	display: block;
+} */
+
+.menusub {
+    background: none repeat scroll 0 0 #d34937;
+    border: maroon 1px solid;
+    border-top: medium none;
+    border-right: medium none;
+    display: none;
+    float: right;
+    list-style: none outside none;
+    padding: 5px;
+    width: 150px;
+    border-bottom-left-radius: 6px;
+    border-bottom-right-radius: 6px;
+}
+.menusub li {
+    height: 20px;
+    padding-right: 5px;
+    text-align: right;
+    border-bottom: 1px solid #D85C4C;
+    padding-top: 10px;
+}
+
+.menusub li a,.menusub li a:visited {
+	color: black;
+	font-size:14px;
+	font-weight: 600;
+}
+
+/*----------------------*/
+
+#header{
+    height: 245px;
+    background-color: black;
+    margin-bottom: 15px;
+    padding-left: 15px;
+    padding-right: 15px;
+    padding-top: 50px;
+}
+
+.tab {
+    width:120px;
+    height: 28px;
+    background-color: #d34937;
+    margin-right: 4px;
+    margin-bottom: 0px;
+    margin-top: 10px;
+    float: left;
+    text-align: center;
+    padding-top: 12px;
+    color: #f5f5f5;
+    font-weight: bold;
+    font-size: 13px;
+}
+
+.tab a{
+    color: #f5f5f5;
+}
+
+.selectedtab {
+    width:120px;
+    height: 28px;
+    background-color: #ededed;
+    margin-right: 4px;
+    margin-bottom: 0px;
+    margin-top: 10px;
+    float: left;
+    text-align: center;
+    padding-top: 12px;
+    font-weight: bold;
+    font-size: 13px;
+}
+
+.details{
+    height: 190px;
+    padding-top: 5px;
+    padding-right: 150px;
+}
+
+.details .displayimage{
+    width:150px;
+    height: 150px;
+    float:left;
+    margin-right: 15px;
+}
+
+.details h1{
+    color: lightgray;
+    font-size: 35px;
+    font-weight: 400;
+}
+
+.details h2{
+    color: gray;
+    font-size: 20px;
+    font-weight: 300;
+    float: left;
+
+}
+
+.details h3{
+    color: lightgray;
+    font-size: 14px;
+    font-weight: 200;
+    margin-top: 15px;
+}
+
+.followbutton {
+	width:120px;
+    height: 28px;
+    background-color: #d34937;
+//    float: left;
+    text-align: center;
+    color: #f5f5f5;
+    font-weight: bold;
+    font-size: 13px;
+    border: none;
+    border-radius: 6px;
+    margin-left:20px;
+}
+
+/*---------------------------------*/
+
+#colback{
+    background: black;
+    height: 100%;
+    width:100%;
+}
+
+#leftcol{
+    width:356px;
+    float: left;
+}
+
+#rightcol{
+    width:484px;
+    /*margin-left: 1px;*/
+    float: right;
+
+}
+
+.leftpost{
+    /*height: 450px; */
+    background: black;
+    /*margin-bottom: 1px;*/
+    padding: 20px;
+    border-bottom-width: 2px;
+    border-bottom-color: #ededed;
+    border-bottom-style: solid;
+    border-right-width: 1px;
+    border-right-color: #ededed;
+    border-right-style: solid;
+}
+
+.leftpost h1{
+	font-size:14px;
+	font-weight: 600;
+	color:#808080;
+	margin-top:12px;
+}
+
+.imgpost{
+    width: 100%;
+}
+
+.rightpost{
+    /*height: 350px; */
+    background: black;
+    /*margin-bottom: 1px;*/
+    padding: 20px;
+    border-bottom-width: 2px;
+    border-bottom-color: #ededed;
+    border-bottom-style: solid;
+    border-left: 1px solid  #ededed;
+}
+
+.rightpost h1{
+	font-size:14px;
+	font-weight: 600;
+	color:#808080;
+	margin-top:12px;
+}
+
+#footer{
+    height:50px;
+    width: 100%;
+    float: left;
+}
